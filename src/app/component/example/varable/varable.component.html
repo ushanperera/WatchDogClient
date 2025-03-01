@@ -1,0 +1,60 @@
+<hr>
+<p>varable works!</p>
+<hr>
+
+<label> "Normal Vairable" : {{normalVaraible}}</label> <br />
+<label> "Signal Vairable" : {{signalVaraible()}}</label>
+
+
+<p>Bindings</p>
+<hr>
+
+
+
+<p>Click events</p>
+<hr>
+<div>
+    <button (click)="eventClicked()">Event Button</button>
+    <label id="lblEvent"> "-" : {{eventVaraible}}</label> <br />
+</div>
+
+<hr>
+<section (mouseover)="onMouseOver()">
+    There's a secret message for you, hover to reveal:
+    {{ message }}
+</section>
+<hr>
+
+<p ng-bind="normalVaraible"></p>
+
+<div data-ng-app="" data-ng-init="quantity=1;price=5">
+    Quantity: <input type="number" ng-model="quantity">
+    Costs: <input type="number" ng-model="price">
+    Total in dollar: {{ quantity * price }}
+</div>
+
+<hr>
+<p>Structural directives</p>
+@if (myBoolean) {
+<span>Boolean is true</span>
+} @else {
+<span>Boolean is false</span>
+}
+
+<br />
+@for (os of operatingSystems; track os.id) {
+<br />
+{{ os.name }}
+}
+
+<br />
+<p>Property Binding in Angular</p>
+
+<input type="text" placeholder="type here :{{myBoolean}}" [readOnly]="myBoolean" />
+
+<hr><br />
+<p>Child Component</p>
+<app-child [childName]="'Child1233'"></app-child>
+
+
+<!-- <label>"Total in dollar: $ {{ quantity * price }}"</label>  -->
