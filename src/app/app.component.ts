@@ -7,7 +7,7 @@ import { FormTemplateComponent } from "./component/example/form-template/form-te
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HomeComponent, HeaderComponent, VarableComponent, VarableComponent, FormTemplateComponent],
+  imports: [RouterOutlet, HeaderComponent, FormTemplateComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

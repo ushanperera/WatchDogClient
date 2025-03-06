@@ -1,6 +1,21 @@
 <h3>Todos List</h3>
 
-@if (!todoItems().length) {
+<h3>Hardcoded Todos List</h3>
+@for (todo of todoStaticItems(); track todo.id) {
+<li>{{ todo.title }}</li>
+}
+
+<h3>API CALL Todos List</h3>
+
+@for (todo of todoItemsAPI(); track todo.id) {
+  <li>{{ todo.title }}</li>
+  }
+
+<h3>-----------------</h3>
+
+<h3>API CALL Todos List with Edit</h3>
+
+@if (!todoItemsAPI().length) {
 <p>Loading...</p>
 }
 
@@ -14,7 +29,9 @@
 </form>
 
 <ul class="todos">
-  @for (todo of todoItems() | filterTodos : searchTerm(); track todo.id) {
+  @for (todo of todoItemsAPI() |filterTodos : searchTerm() ; track todo.id) {
   <app-todo-item (todoToggled)="updateTodoItem($event)" [todo]="todo" />
   }
 </ul>
+
+<h3>-----------------</h3>
