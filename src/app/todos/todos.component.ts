@@ -19,6 +19,8 @@ export class TodosComponent implements OnInit {
   todoStaticItems = signal<Array<Todo>>([]);
   todoItemsAPI = signal<Array<Todo>>([]);
 
+
+  //filteration
   searchTerm = signal('');
 
   ngOnInit(): void {
@@ -42,10 +44,10 @@ export class TodosComponent implements OnInit {
         // this.todoItemsAPI.set(data);
         this.todoItemsAPI.set(data.slice(0, 10)); //Slice the data to show only 10 items
       });
-  
-    }
 
-//whenchild component checks the checkbox
+  }
+
+  //whenchild component checks the checkbox
   updateTodoItem(todoItem: Todo) {
     this.todoItemsAPI.update((todos) => {
       return todos.map((todo) => {
@@ -60,5 +62,5 @@ export class TodosComponent implements OnInit {
     });
 
   }
-  
+
 }

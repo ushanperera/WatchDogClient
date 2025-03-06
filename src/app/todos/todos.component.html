@@ -29,7 +29,7 @@
 </form>
 
 <ul class="todos">
-  @for (todo of todoItemsAPI() |filterTodos : searchTerm() ; track todo.id) {
+  @for (todo of todoItemsAPI() | filterTodos : searchTerm() ; track todo.id) {
   <app-todo-item (todoToggled)="updateTodoItem($event)" [todo]="todo" />
   }
 </ul>
