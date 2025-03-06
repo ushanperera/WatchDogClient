@@ -1,4 +1,4 @@
-<h3>Todos List</h3>
+<h3>Todos List - 'logic is in todos comonent' </h3>
 
 <h3>Hardcoded Todos List</h3>
 @for (todo of todoStaticItems(); track todo.id) {
@@ -15,12 +15,13 @@
 
 <h3>API CALL Todos List with Edit</h3>
 
+<!-- //here we have used if decorater instead ngif structural directive -->
 @if (!todoItemsAPI().length) {
 <p>Loading...</p>
 }
 
 <form>
-  <label>Filter Todos</label>
+  <label>Filter Todos - 'this is implemented with a pipe' </label>
   <input
     name="searchTerm"
     [(ngModel)]="searchTerm"
@@ -28,6 +29,7 @@
   />
 </form>
 
+<p> here it loads clild component and take tick box click as output event</p>
 <ul class="todos">
   @for (todo of todoItemsAPI() | filterTodos : searchTerm() ; track todo.id) {
   <app-todo-item (todoToggled)="updateTodoItem($event)" [todo]="todo" />
